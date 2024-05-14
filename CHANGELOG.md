@@ -1,5 +1,6 @@
 ## Unreleased
 - ([\#702](https://github.com/forbole/bdjuno/pull/702)) Add `message_type` module and store msg types inside `message_type` table, add `messages_by_type` function to allow to query messages by their types
+- ([\#FETEAM 1](https://github.com/SimplyStaking/callisto/pull/1)) Fixed `docker-composer.yml` to run BDJUNO with AGORIC node rpc and grpc
 
 ### Changes
 
