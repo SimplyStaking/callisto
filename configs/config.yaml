@@ -1,0 +1,37 @@
+chain:
+    bech32_prefix: cosmos
+    modules:
+        - actions
+node:
+    type: remote
+    config:
+        rpc:
+            client_name: agoric
+            address: https://agoric-rpc.polkachu.com:443
+            max_connections: 20
+        grpc:
+            address: agoric-grpc.polkachu.com:14490
+            insecure: true
+parsing:
+    workers: 1
+    start_height: 1
+    average_block_time: 5s
+    listen_new_blocks: true
+    parse_old_blocks: true
+    parse_genesis: true
+database:
+    url: postgresql://user:password@172.20.0.7:5432/callisto?sslmode=disable
+    max_open_connections: 1
+    max_idle_connections: 1
+    partition_size: 100000                                                                                                                                                                                                                                                                                                                                                                                          
+    partition_batch: 1000
+    ssl_mode_enable: "false"
+    ssl_root_cert: ""
+    ssl_cert: ""
+    ssl_key: ""
+logging:
+    level: debug
+    format: text
+actions:
+    host: 172.20.0.6
+    port: 3000
