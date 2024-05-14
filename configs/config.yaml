@@ -20,7 +20,7 @@ parsing:
     parse_old_blocks: true
     parse_genesis: true
 database:
-    url: postgresql://user:password@172.20.0.7:5432/callisto?sslmode=disable
+    url: postgresql://user:password@172.20.0.7:5432/bdjuno?sslmode=disable
     max_open_connections: 1
     max_idle_connections: 1
     partition_size: 100000                                                                                                                                                                                                                                                                                                                                                                                          
