@@ -4,7 +4,7 @@ services:
     container_name: hasura
     build:
       context: .
-      dockerfile: Dockerfile.hasura    
+      dockerfile: Dockerfile.hasura
     ports:
       - "8080:8080"
     restart: always
@@ -19,7 +19,7 @@ services:
     networks:
       default:
         ipv4_address: "172.20.0.5"
-  
+
   bdjuno:
     container_name: bdjuno
     build:
@@ -59,3 +59,6 @@ networks:
       driver: default
       config:
         - subnet: "172.20.0.0/16"
+
+
+
