@@ -36,7 +36,7 @@ logging:
     average_block_time: 5s
 pricefeed:
     tokens:
-        - name: Atom
+        - name: Agoric
           units:
             - denom: ubld
               exponent: 0
