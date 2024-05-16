@@ -21,10 +21,18 @@ the [docs website](https://docs.bigdipper.live/cosmos-based/parser/overview/).
 - docker compose up -d --build
 - docker exec -it hasura hasura metadata apply
 
+### Docker postgres service
+If you want to access the database through pgAdmin or another DB tool, please ensure that the service port is exposed:
+
+```docker
+ports:
+    - xxxx:5432 # xxxx => 5432 | 5433 | any
+```
+
 ### Binary tools
 - ./bin/prune.sh -db to clear all and database
 - ./bin/build.sh     to build all
-- 
+
 ## Testing
 If you want to test the code, you can do so by running
 
