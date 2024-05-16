@@ -801,7 +801,7 @@
             "index_offset": "2115663",
             "jailed_until": "1970-01-01T00:00:00Z",
             "missed_blocks_counter": "0",
-            "start_height": "14582058",
+            "start_height": "0",
             "tombstoned": false
           }
         }

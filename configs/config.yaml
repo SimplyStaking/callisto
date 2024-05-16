@@ -2,6 +2,7 @@ chain:
     bech32_prefix: cosmos
     modules:
         - actions
+        - pricefeed
 node:
     type: remote
     config:
@@ -32,6 +33,16 @@ database:
 logging:
     level: debug
     format: text
+    average_block_time: 5s
+pricefeed:
+    tokens:
+        - name: Atom
+          units:
+            - denom: ubld
+              exponent: 0
+            - denom: bld
+              exponent: 6
+              price_id: agoric           
 actions:
     host: 172.20.0.6
     port: 3000
