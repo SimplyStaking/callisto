@@ -1,8 +1,10 @@
 chain:
-    bech32_prefix: cosmos
+    bech32_prefix: agoric
     modules:
+        - modules
+        - messages
         - actions
-        - pricefeed
+
 node:
     type: remote
     config:
@@ -42,7 +44,7 @@ pricefeed:
               exponent: 0
             - denom: bld
               exponent: 6
-              price_id: agoric           
+              price_id: agoric
 actions:
     host: 172.20.0.6
     port: 3000

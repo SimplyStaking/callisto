@@ -1,7 +1,15 @@
 #!/bin/bash
 
+# Check if a folder path is provided as parameter
+if [ "$1" == "--clean" ]; then
+    # Remove database
+    sh ./bin/prune.sh -db
+fi
+
 # Bring up Hasura service
-sudo docker compose up -d --build
+sudo docker compose up -d --build postgres
+sudo docker compose up -d --build bdjuno
+sudo docker compose up -d --build hasura
 
 # Sleep for 30 seconds
 sleep 30s
