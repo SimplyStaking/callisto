@@ -3,7 +3,7 @@
 # Check if a folder path is provided as parameter
 if [ "$1" == "--clean" ]; then
     # Remove database
-    sh ./bin/prune.sh -db
+    ./bin/prune.sh -db
 fi
 
 # Bring up Hasura service

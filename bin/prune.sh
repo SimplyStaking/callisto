@@ -10,4 +10,5 @@ sudo docker system prune -a -f
 if [ "$1" == "-db" ]; then
     # Remove database
     sudo rm -rf postgres-data/
+    echo "Database volume removed..."
 fi

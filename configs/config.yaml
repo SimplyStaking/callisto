@@ -3,7 +3,20 @@ chain:
     modules:
         - modules
         - messages
+        - auth
+        - bank
+        - consensus
+        - feegrant
+        - gov
+        - mint
+        - pricefeed
+        - slashing
+        - staking
+        - distribution   
+        - upgrade
+        - wasm
         - actions
+        - daily refetch
 
 node:
     type: remote

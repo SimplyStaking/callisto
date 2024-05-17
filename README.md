@@ -30,8 +30,8 @@ ports:
 ```
 
 ### Binary tools
-- ./bin/prune.sh -db to clear all and database
-- ./bin/build.sh     to build all
+- ./bin/build.sh            to build
+- ./bin/build.sh --clean    to fresh build
 
 ## Testing
 If you want to test the code, you can do so by running
