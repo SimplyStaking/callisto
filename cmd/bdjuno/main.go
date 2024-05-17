@@ -6,11 +6,11 @@ import (
 	initcmd "github.com/forbole/juno/v5/cmd/init"
 	parsetypes "github.com/forbole/juno/v5/cmd/parse/types"
 	startcmd "github.com/forbole/juno/v5/cmd/start"
-	"github.com/forbole/juno/v5/modules/messages"
 
 	migratecmd "github.com/forbole/bdjuno/v4/cmd/migrate"
 	parsecmd "github.com/forbole/bdjuno/v4/cmd/parse"
 
+	"github.com/forbole/bdjuno/v4/modules/messages"
 	"github.com/forbole/bdjuno/v4/types/config"
 
 	agoricapp "github.com/Agoric/agoric-sdk/golang/cosmos/app"
