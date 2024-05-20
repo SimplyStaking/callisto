@@ -11,8 +11,8 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/forbole/bdjuno/v4/modules/messages"
 	jmodules "github.com/forbole/juno/v5/modules"
-	"github.com/forbole/juno/v5/modules/messages"
 	"github.com/forbole/juno/v5/modules/registrar"
 
 	"github.com/forbole/bdjuno/v4/utils"
@@ -89,7 +89,7 @@ func (r *Registrar) BuildModules(ctx registrar.Context) jmodules.Modules {
 	upgradeModule := upgrade.NewModule(db, stakingModule)
 
 	return []jmodules.Module{
-		messages.NewModule(r.parser, cdc, ctx.Database),
+		messages.NewModule(r.parser, cdc, db),
 		telemetry.NewModule(ctx.JunoConfig),
 		pruning.NewModule(ctx.JunoConfig, db, ctx.Logger),
 

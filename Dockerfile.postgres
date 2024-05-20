@@ -1,0 +1,10 @@
+FROM postgres:latest
+
+# Copy the SQL scripts into a temporary directory
+COPY ./database/schema/*.sql /docker-entrypoint-initdb.d/
+
+# Grant permissions to the scripts
+RUN chmod +x /docker-entrypoint-initdb.d/*.sql
+
+# Run each SQL script individually during container startup
+CMD ["postgres", "-c", "log_statement=all"]

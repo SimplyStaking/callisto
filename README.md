@@ -13,9 +13,25 @@ All the chains' data that are queried from the RPC and gRPC endpoints are stored
 a [PostgreSQL](https://www.postgresql.org/) database on top of which [GraphQL](https://graphql.org/) APIs can then be
 created using [Hasura](https://hasura.io/).
 
-## Usage
+## Localy usage
 To know how to setup and run BDJuno, please refer to
 the [docs website](https://docs.bigdipper.live/cosmos-based/parser/overview/).
+
+## Docker usage
+- docker compose up -d --build
+- docker exec -it hasura hasura metadata apply
+
+### Docker postgres service
+If you want to access the database through pgAdmin or another DB tool, please ensure that the service port is exposed:
+
+```docker
+ports:
+    - xxxx:5432 # xxxx => 5432 | 5433 | any
+```
+
+### Binary tools
+- ./bin/build.sh            to build
+- ./bin/build.sh --clean    to fresh build
 
 ## Testing
 If you want to test the code, you can do so by running
@@ -23,11 +39,9 @@ If you want to test the code, you can do so by running
 ```shell
 $ make test-unit
 ```
-
 **Note**: Requires [Docker](https://docker.com).
 
 This will:
 1. Create a Docker container running a PostgreSQL database.
 2. Run all the tests using that database as support.
-
 

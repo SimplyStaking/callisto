@@ -1,26 +1,64 @@
 version: '3.6'
 services:
   hasura:
-    image: hasura/graphql-engine:v2.0.4
-    ports:
-    - "8080:8080"
-    restart: always
-    environment:
-      ## this env var can be used to add the above postgres database to Hasura as a data source. this can be removed/updated based on your needs
-      HASURA_GRAPHQL_DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
-      ## enable the console served by server
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
-      ## enable debugging mode. It is recommended to disable this in production
-      HASURA_GRAPHQL_DEV_MODE: "true"
-      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
-      ## uncomment next line to set an admin secret
-      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-  bdjuno:
+    container_name: hasura
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.hasura
+    ports:
+      - "8080:8080"
     restart: always
-    command: bdjuno parse --home /bdjuno/.bdjuno
+    environment:      
+      HASURA_GRAPHQL_DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_DEV_MODE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+      ACTION_BASE_URL: ${HASURA_ACTION_BASE_URL}
+    depends_on:
+      - postgres
+    networks:
+      default:
+        ipv4_address: "172.20.0.5"
+
+  bdjuno:
+    container_name: bdjuno
+    build:
+      context: .
+      dockerfile: Dockerfile.bdjuno
+    restart: always
+    depends_on:
+      - postgres
+      - hasura
+    networks:
+      default:
+        ipv4_address: "172.20.0.6"
+    
+
+  postgres:
+    container_name: postgres
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres    
+    restart: always
+    environment:
+      # Postgres Credentials
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      ## Modify first path to match configuration file.
-      - /bdjuno/.bdjuno:/bdjuno/.bdjuno
+      # Volume backup for postgres
+       - "./postgres-data:/var/lib/postgresql/data" 
+    networks:
+      default:
+        ipv4_address: "172.20.0.7"
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.20.0.0/16"
+
+
+

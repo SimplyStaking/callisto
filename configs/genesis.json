@@ -1,0 +1,878 @@
+{
+  "genesis_time": "2021-05-15T04:22:21.244521Z",
+  "chain_id": "agoric-3",
+  "initial_height": "2115669",
+  "consensus_params": {
+    "block": {
+      "max_bytes": "22020096",
+      "max_gas": "-1",
+      "time_iota_ms": "1000"
+    },
+    "evidence": {
+      "max_age_num_blocks": "100000",
+      "max_age_duration": "172800000000000",
+      "max_bytes": "1048576"
+    },
+    "validator": {
+      "pub_key_types": [
+        "ed25519"
+      ]
+    },
+    "version": {}
+  },
+  "validators": [
+    {
+      "address": "E21E4F646ABE73B07EE05532B11EC6D1DBE68A3D",
+      "pub_key": {
+        "type": "tendermint/PubKeyEd25519",
+        "value": "8MfuMJXfdubMYlPOmumUsGN9GehZRfwO95DpRJ4C9A4="
+      },
+      "power": "100",
+      "name": "AgoricOpCo"
+    }
+  ],
+  "app_hash": "",
+  "app_state": {
+    "auth": {
+      "accounts": [
+        {
+          "@type": "/cosmos.vesting.v1beta1.PeriodicVestingAccount",
+          "base_vesting_account": {
+            "base_account": {
+              "account_number": "20",
+              "address": "agoric1qc3r5tlh9ldvcg54lj8ukrwhytpffkmjxav87c",
+              "pub_key": null,
+              "sequence": "0"
+            },
+            "delegated_free": [],
+            "delegated_vesting": [],
+            "end_time": "1659218400",
+            "original_vesting": []
+          },
+          "start_time": "1625090400",
+          "vesting_periods": [
+            {
+              "amount": [
+                {
+                  "amount": "1000000",
+                  "denom": "ubld"
+                }
+              ],
+              "length": "34128000"
+            }
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "8",
+            "address": "agoric1yl6hdjhmkf37639730gffanpzndzdpmhuz5k84",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "transfer",
+          "permissions": [
+            "minter",
+            "burner"
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "0",
+          "address": "agoric19jnwzruuspq2smwm53j8za8jcsd5zqnjgdq6vg",
+          "pub_key": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "AuJtYWLWier2IUj5WKn3rXePaegkOxqMAr6D2cI+fH1M"
+          },
+          "sequence": "20"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "18",
+          "address": "agoric18du3gnu9qqgrcfln804g8gcmruv2gjwgs7mj3l",
+          "pub_key": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "A3QaP3qb8lGnj1+EPRmvs5QImemG6AZ6jPGBdsmIA7UQ"
+          },
+          "sequence": "8"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "12",
+          "address": "agoric18c72hdqrcc4hkpewvpf7grrx8rawk0045g3tm0",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "15",
+          "address": "agoric18m9lqhqas8qrwafj92kta0ek2q96kwvyt84793",
+          "pub_key": {
+            "@type": "/cosmos.crypto.multisig.LegacyAminoPubKey",
+            "public_keys": [
+              {
+                "@type": "/cosmos.crypto.secp256k1.PubKey",
+                "key": "A1Gkmz3nnu0BAsxGt6+SY2J7cAcNvtXL8jmdzvBwmc/o"
+              },
+              {
+                "@type": "/cosmos.crypto.secp256k1.PubKey",
+                "key": "Arf6sVTQ5UYZYvznDXCmfLxFlT0WrTKhXjUaSd12D+/4"
+              },
+              {
+                "@type": "/cosmos.crypto.secp256k1.PubKey",
+                "key": "A7JHvmGbzsj4viIZpLrP179R1WvleVX8ZYhCXFUGLllc"
+              }
+            ],
+            "threshold": 2
+          },
+          "sequence": "1"
+        },
+        {
+          "@type": "/cosmos.vesting.v1beta1.PeriodicVestingAccount",
+          "base_vesting_account": {
+            "base_account": {
+              "account_number": "21",
+              "address": "agoric1grgelyng2v6v3t8z87wu3sxgt9m5s03x7dax7m",
+              "pub_key": null,
+              "sequence": "0"
+            },
+            "delegated_free": [],
+            "delegated_vesting": [],
+            "end_time": "1659218400",
+            "original_vesting": []
+          },
+          "start_time": "1625090400",
+          "vesting_periods": [
+            {
+              "amount": [
+                {
+                  "amount": "1000000",
+                  "denom": "ubld"
+                }
+              ],
+              "length": "34128000"
+            }
+          ]
+        },
+        {
+          "@type": "/cosmos.vesting.v1beta1.PeriodicVestingAccount",
+          "base_vesting_account": {
+            "base_account": {
+              "account_number": "19",
+              "address": "agoric1gmru5vv2zrz9m0d3vwjz6fcchw9ddmq9w3s2qy",
+              "pub_key": null,
+              "sequence": "0"
+            },
+            "delegated_free": [],
+            "delegated_vesting": [],
+            "end_time": "1659218400",
+            "original_vesting": []
+          },
+          "start_time": "1625090400",
+          "vesting_periods": [
+            {
+              "amount": [
+                {
+                  "amount": "1000000",
+                  "denom": "ubld"
+                }
+              ],
+              "length": "34128000"
+            }
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "4",
+            "address": "agoric1fl48vsnmsdzcv85q5d2q4z5ajdha8yu38xtsfp",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "bonded_tokens_pool",
+          "permissions": [
+            "burner",
+            "staking"
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "5",
+            "address": "agoric1tygms3xhhs3yv487phx3dw4a95jn7t7lnxhpl4",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "not_bonded_tokens_pool",
+          "permissions": [
+            "burner",
+            "staking"
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "1",
+          "address": "agoric1v59v7cs3km3ypp334nrdzv4ejh49yqge43tqh5",
+          "pub_key": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "Ayk6qEpFIMCPwO8VPyJ9XirEfcw1BpHMucK/lNlVraTq"
+          },
+          "sequence": "2"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "11",
+          "address": "agoric1w89nsqmcjfw9la2x8pk5k8pwwsgh8mhqs53tsr",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "13",
+          "address": "agoric10fz6uxxlg7pdkscgpzcny4z6lzhqcluyqhr8au",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "6",
+            "address": "agoric10d07y265gmmuvt4z0w9aw880jnsr700jgl36x9",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "gov",
+          "permissions": [
+            "burner"
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "16",
+          "address": "agoric10mmdskqh6nv8tzd4lhzpevwlky35m43s45ssg5",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "3",
+            "address": "agoric1jv65s3grqf6v6jl3dp4t6c9t9rk99cd84zxref",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "distribution",
+          "permissions": []
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "17",
+          "address": "agoric1kxquj9rnprhyaq2laulgqznz7t6yqmw6wm5ucx",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "9",
+          "address": "agoric1euw2t0lxgeerlpj0tcy77f9syrmgx26ehdx3sq",
+          "pub_key": {
+            "@type": "/cosmos.crypto.multisig.LegacyAminoPubKey",
+            "public_keys": [
+              {
+                "@type": "/cosmos.crypto.secp256k1.PubKey",
+                "key": "A1Gkmz3nnu0BAsxGt6+SY2J7cAcNvtXL8jmdzvBwmc/o"
+              },
+              {
+                "@type": "/cosmos.crypto.secp256k1.PubKey",
+                "key": "A2Jj9V1kYlfbN/tcseIAkXFyU7MeOyFeGj25xPISEYr+"
+              },
+              {
+                "@type": "/cosmos.crypto.secp256k1.PubKey",
+                "key": "A7JHvmGbzsj4viIZpLrP179R1WvleVX8ZYhCXFUGLllc"
+              }
+            ],
+            "threshold": 2
+          },
+          "sequence": "1"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "7",
+            "address": "agoric1m3h30wlvsf8llruxtpukdvsy0km2kum86v98hk",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "mint",
+          "permissions": [
+            "minter"
+          ]
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "10",
+          "address": "agoric1a0fktnlglcpj3pkzwftnr63uqr42mmcskuhakj",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.BaseAccount",
+          "account_number": "14",
+          "address": "agoric179gfr279yh3zhdw7aw85t7kj4vcsazdckzd42e",
+          "pub_key": null,
+          "sequence": "0"
+        },
+        {
+          "@type": "/cosmos.auth.v1beta1.ModuleAccount",
+          "base_account": {
+            "account_number": "2",
+            "address": "agoric17xpfvakm2amg962yls6f84z3kell8c5lzyplmt",
+            "pub_key": null,
+            "sequence": "0"
+          },
+          "name": "fee_collector",
+          "permissions": []
+        }
+      ],
+      "params": {
+        "max_memo_characters": "256",
+        "sig_verify_cost_ed25519": "590",
+        "sig_verify_cost_secp256k1": "1000",
+        "tx_sig_limit": "7",
+        "tx_size_cost_per_byte": "10"
+      }
+    },
+    "authz": {
+      "authorization": []
+    },
+    "bank": {
+      "balances": [
+        {
+          "address": "agoric1qc3r5tlh9ldvcg54lj8ukrwhytpffkmjxav87c",
+          "coins": [
+            {
+              "amount": "1000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric18du3gnu9qqgrcfln804g8gcmruv2gjwgs7mj3l",
+          "coins": [
+            {
+              "amount": "497000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric18c72hdqrcc4hkpewvpf7grrx8rawk0045g3tm0",
+          "coins": [
+            {
+              "amount": "200000000000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric18m9lqhqas8qrwafj92kta0ek2q96kwvyt84793",
+          "coins": [
+            {
+              "amount": "49999400000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric1grgelyng2v6v3t8z87wu3sxgt9m5s03x7dax7m",
+          "coins": [
+            {
+              "amount": "1000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric1gmru5vv2zrz9m0d3vwjz6fcchw9ddmq9w3s2qy",
+          "coins": [
+            {
+              "amount": "1000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric1fl48vsnmsdzcv85q5d2q4z5ajdha8yu38xtsfp",
+          "coins": [
+            {
+              "amount": "100000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric1w89nsqmcjfw9la2x8pk5k8pwwsgh8mhqs53tsr",
+          "coins": [
+            {
+              "amount": "300000000000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric10fz6uxxlg7pdkscgpzcny4z6lzhqcluyqhr8au",
+          "coins": [
+            {
+              "amount": "30000000000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric10mmdskqh6nv8tzd4lhzpevwlky35m43s45ssg5",
+          "coins": [
+            {
+              "amount": "125000000000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric1kxquj9rnprhyaq2laulgqznz7t6yqmw6wm5ucx",
+          "coins": [
+            {
+              "amount": "45000000000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric1euw2t0lxgeerlpj0tcy77f9syrmgx26ehdx3sq",
+          "coins": [
+            {
+              "amount": "100000000000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric1a0fktnlglcpj3pkzwftnr63uqr42mmcskuhakj",
+          "coins": [
+            {
+              "amount": "25000000000000",
+              "denom": "ubld"
+            }
+          ]
+        },
+        {
+          "address": "agoric179gfr279yh3zhdw7aw85t7kj4vcsazdckzd42e",
+          "coins": [
+            {
+              "amount": "125000000000000",
+              "denom": "ubld"
+            }
+          ]
+        }
+      ],
+      "denom_metadata": [],
+      "params": {
+        "default_send_enabled": true,
+        "send_enabled": []
+      },
+      "supply": [
+        {
+          "amount": "1000000000000000",
+          "denom": "ubld"
+        }
+      ]
+    },
+    "capability": {
+      "index": "2",
+      "owners": [
+        {
+          "index": "1",
+          "index_owners": {
+            "owners": [
+              {
+                "module": "ibc",
+                "name": "ports/transfer"
+              },
+              {
+                "module": "transfer",
+                "name": "ports/transfer"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "crisis": {
+      "constant_fee": {
+        "amount": "1000",
+        "denom": "ubld"
+      }
+    },
+    "distribution": {
+      "delegator_starting_infos": [
+        {
+          "delegator_address": "agoric19jnwzruuspq2smwm53j8za8jcsd5zqnjgdq6vg",
+          "starting_info": {
+            "height": "0",
+            "previous_period": "1",
+            "stake": "100000000.000000000000000000"
+          },
+          "validator_address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf"
+        }
+      ],
+      "delegator_withdraw_infos": [],
+      "fee_pool": {
+        "community_pool": []
+      },
+      "outstanding_rewards": [
+        {
+          "outstanding_rewards": [],
+          "validator_address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf"
+        }
+      ],
+      "params": {
+        "base_proposer_reward": "0.000000000000000000",
+        "bonus_proposer_reward": "0.000000000000000000",
+        "community_tax": "0.000000000000000000",
+        "withdraw_addr_enabled": true
+      },
+      "previous_proposer": "agoricvalcons1ug0y7er2heemqlhq25etz8kx68d7dz3a962hul",
+      "validator_accumulated_commissions": [
+        {
+          "accumulated": {
+            "commission": []
+          },
+          "validator_address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf"
+        }
+      ],
+      "validator_current_rewards": [
+        {
+          "rewards": {
+            "period": "2",
+            "rewards": []
+          },
+          "validator_address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf"
+        }
+      ],
+      "validator_historical_rewards": [
+        {
+          "period": "1",
+          "rewards": {
+            "cumulative_reward_ratio": [],
+            "reference_count": 2
+          },
+          "validator_address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf"
+        }
+      ],
+      "validator_slash_events": []
+    },
+    "evidence": {
+      "evidence": []
+    },
+    "feegrant": {
+      "allowances": []
+    },
+    "genutil": {
+      "gen_txs": []
+    },
+    "gov": {
+      "deposit_params": {
+        "max_deposit_period": "172800s",
+        "min_deposit": [
+          {
+            "amount": "1",
+            "denom": "ubld"
+          }
+        ]
+      },
+      "deposits": [],
+      "proposals": [
+        {
+          "content": {
+            "@type": "/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal",
+            "description": "This upgrade will halt the first agoric chain. The state will be exported. The state export will be modified to convert uagstake into ubld. The successor to this chain will be agoric-1.",
+            "plan": {
+              "height": "105000",
+              "info": "",
+              "name": "agoric-upgrade-0",
+              "time": "0001-01-01T00:00:00Z",
+              "upgraded_client_state": null
+            },
+            "title": "First Agoric upgrade"
+          },
+          "deposit_end_time": "2021-06-17T05:04:39.796946945Z",
+          "final_tally_result": {
+            "abstain": "100000000",
+            "no": "0",
+            "no_with_veto": "0",
+            "yes": "0"
+          },
+          "proposal_id": "1",
+          "status": "PROPOSAL_STATUS_REJECTED",
+          "submit_time": "2021-06-15T05:04:39.796946945Z",
+          "total_deposit": [
+            {
+              "amount": "1",
+              "denom": "ubld"
+            }
+          ],
+          "voting_end_time": "2021-06-16T05:04:39.796946945Z",
+          "voting_start_time": "2021-06-15T05:04:39.796946945Z"
+        },
+        {
+          "content": {
+            "@type": "/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal",
+            "description": "This upgrade will halt the first agoric chain. The state will be exported. The state export will be modified to convert ubld into ubld. The successor to this chain will be agoric-1.",
+            "plan": {
+              "height": "113000",
+              "info": "",
+              "name": "agoric-upgrade-1",
+              "time": "0001-01-01T00:00:00Z",
+              "upgraded_client_state": null
+            },
+            "title": "Rename staking token"
+          },
+          "deposit_end_time": "2021-06-17T15:36:08.630510781Z",
+          "final_tally_result": {
+            "abstain": "100000000",
+            "no": "0",
+            "no_with_veto": "0",
+            "yes": "0"
+          },
+          "proposal_id": "2",
+          "status": "PROPOSAL_STATUS_REJECTED",
+          "submit_time": "2021-06-15T15:36:08.630510781Z",
+          "total_deposit": [
+            {
+              "amount": "1",
+              "denom": "ubld"
+            }
+          ],
+          "voting_end_time": "2021-06-16T15:36:08.630510781Z",
+          "voting_start_time": "2021-06-15T15:36:08.630510781Z"
+        },
+        {
+          "content": {
+            "@type": "/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal",
+            "description": "This upgrade will halt the first agoric chain. The state will be exported. The state export will be modified to convert ubld into ubld. The successor to this chain will be agoric-1.",
+            "plan": {
+              "height": "132600",
+              "info": "",
+              "name": "agoric-upgrade-3",
+              "time": "0001-01-01T00:00:00Z",
+              "upgraded_client_state": null
+            },
+            "title": "Rename ubld"
+          },
+          "deposit_end_time": "2021-06-17T19:23:16.191744393Z",
+          "final_tally_result": {
+            "abstain": "0",
+            "no": "0",
+            "no_with_veto": "0",
+            "yes": "100000000"
+          },
+          "proposal_id": "3",
+          "status": "PROPOSAL_STATUS_PASSED",
+          "submit_time": "2021-06-15T19:23:16.191744393Z",
+          "total_deposit": [
+            {
+              "amount": "1",
+              "denom": "ubld"
+            }
+          ],
+          "voting_end_time": "2021-06-16T19:23:16.191744393Z",
+          "voting_start_time": "2021-06-15T19:23:16.191744393Z"
+        },
+        {
+          "content": {
+            "@type": "/cosmos.upgrade.v1beta1.SoftwareUpgradeProposal",
+            "description": "This upgrade will halt agoric-1 chain. The state will be exported. The state export will be modified to remove account agoric1grgelyng2v6v3t8z87wu3sxgt9m5s03x7dax7m. The \"vesting\" module will also be upgraded to fix the \"failure to persist vesting account\" bug. The successor to this chain will be agoric-2.",
+            "plan": {
+              "height": "465000",
+              "info": "",
+              "name": "agoric-upgrade-4",
+              "time": "0001-01-01T00:00:00Z",
+              "upgraded_client_state": null
+            },
+            "title": "Repair vesting issue"
+          },
+          "deposit_end_time": "2021-07-18T04:32:11.565569567Z",
+          "final_tally_result": {
+            "abstain": "0",
+            "no": "0",
+            "no_with_veto": "0",
+            "yes": "100000000"
+          },
+          "proposal_id": "4",
+          "status": "PROPOSAL_STATUS_PASSED",
+          "submit_time": "2021-07-16T04:32:11.565569567Z",
+          "total_deposit": [
+            {
+              "amount": "1",
+              "denom": "ubld"
+            }
+          ],
+          "voting_end_time": "2021-07-17T04:32:11.565569567Z",
+          "voting_start_time": "2021-07-16T04:32:11.565569567Z"
+        }
+      ],
+      "starting_proposal_id": "5",
+      "tally_params": {
+        "quorum": "0.334000000000000000",
+        "threshold": "0.500000000000000000",
+        "veto_threshold": "0.334000000000000000"
+      },
+      "votes": [],
+      "voting_params": {
+        "voting_period": "86400s"
+      }
+    },
+    "ibc": {
+      "channel_genesis": {
+        "ack_sequences": [],
+        "acknowledgements": [],
+        "channels": [],
+        "commitments": [],
+        "next_channel_sequence": "0",
+        "receipts": [],
+        "recv_sequences": [],
+        "send_sequences": []
+      },
+      "client_genesis": {
+        "clients": [],
+        "clients_consensus": [],
+        "clients_metadata": [],
+        "create_localhost": false,
+        "next_client_sequence": "0",
+        "params": {
+          "allowed_clients": [
+            "06-solomachine",
+            "07-tendermint"
+          ]
+        }
+      },
+      "connection_genesis": {
+        "client_connection_paths": [],
+        "connections": [],
+        "next_connection_sequence": "0",
+        "params": {
+          "max_expected_time_per_block": "30000000000"
+        }
+      }
+    },
+    "mint": {
+      "minter": {
+        "annual_provisions": "0.000000000000000000",
+        "inflation": "0.000000000000000000"
+      },
+      "params": {
+        "blocks_per_year": "6311520",
+        "goal_bonded": "0.670000000000000000",
+        "inflation_max": "0.000000000000000000",
+        "inflation_min": "0.000000000000000000",
+        "inflation_rate_change": "0.000000000000000000",
+        "mint_denom": "ubld"
+      }
+    },
+    "params": null,
+    "slashing": {
+      "missed_blocks": [
+        {
+          "address": "agoricvalcons1ug0y7er2heemqlhq25etz8kx68d7dz3a962hul",
+          "missed_blocks": []
+        }
+      ],
+      "params": {
+        "downtime_jail_duration": "600s",
+        "min_signed_per_window": "0.050000000000000000",
+        "signed_blocks_window": "5000",
+        "slash_fraction_double_sign": "0.000000000000000000",
+        "slash_fraction_downtime": "0.000000000000000000"
+      },
+      "signing_infos": [
+        {
+          "address": "agoricvalcons1ug0y7er2heemqlhq25etz8kx68d7dz3a962hul",
+          "validator_signing_info": {
+            "address": "agoricvalcons1ug0y7er2heemqlhq25etz8kx68d7dz3a962hul",
+            "index_offset": "2115663",
+            "jailed_until": "1970-01-01T00:00:00Z",
+            "missed_blocks_counter": "0",
+            "start_height": "0",
+            "tombstoned": false
+          }
+        }
+      ]
+    },
+    "staking": {
+      "delegations": [
+        {
+          "delegator_address": "agoric19jnwzruuspq2smwm53j8za8jcsd5zqnjgdq6vg",
+          "shares": "100000000.000000000000000000",
+          "validator_address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf"
+        }
+      ],
+      "exported": true,
+      "last_total_power": "100",
+      "last_validator_powers": [
+        {
+          "address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf",
+          "power": "100"
+        }
+      ],
+      "params": {
+        "bond_denom": "ubld",
+        "historical_entries": 10000,
+        "max_entries": 7,
+        "max_validators": 100,
+        "unbonding_time": "86400s"
+      },
+      "redelegations": [],
+      "unbonding_delegations": [],
+      "validators": [
+        {
+          "commission": {
+            "commission_rates": {
+              "max_change_rate": "1.000000000000000000",
+              "max_rate": "1.000000000000000000",
+              "rate": "0.000000000000000000"
+            },
+            "update_time": "2021-05-15T04:22:21.244521Z"
+          },
+          "consensus_pubkey": {
+            "@type": "/cosmos.crypto.ed25519.PubKey",
+            "key": "8MfuMJXfdubMYlPOmumUsGN9GehZRfwO95DpRJ4C9A4="
+          },
+          "delegator_shares": "100000000.000000000000000000",
+          "description": {
+            "details": "",
+            "identity": "",
+            "moniker": "AgoricOpCo",
+            "security_contact": "",
+            "website": ""
+          },
+          "jailed": false,
+          "min_self_delegation": "1",
+          "operator_address": "agoricvaloper19jnwzruuspq2smwm53j8za8jcsd5zqnjc4nnsf",
+          "status": "BOND_STATUS_BONDED",
+          "tokens": "100000000",
+          "unbonding_height": "0",
+          "unbonding_time": "1970-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "transfer": {
+      "denom_traces": [],
+      "params": {
+        "receive_enabled": false,
+        "send_enabled": false
+      },
+      "port_id": "transfer"
+    },
+    "upgrade": {},
+    "vesting": {}
+  }
+}

@@ -1,0 +1,63 @@
+chain:
+    bech32_prefix: agoric
+    modules:
+        - modules
+        - messages
+        - auth
+        - bank
+        - consensus
+        - feegrant
+        - gov
+        - mint
+        - pricefeed
+        - slashing
+        - staking
+        - distribution   
+        - upgrade
+        - wasm
+        - actions
+        - daily refetch
+
+node:
+    type: remote
+    config:
+        rpc:
+            client_name: agoric
+            address: https://agoric-rpc.polkachu.com:443
+            max_connections: 20
+        grpc:
+            address: agoric-grpc.polkachu.com:14490
+            insecure: true
+parsing:
+    workers: 10
+    start_height: 14582058
+    average_block_time: 5s
+    listen_new_blocks: true
+    parse_old_blocks: true
+    parse_genesis: true
+database:
+    url: postgresql://user:password@172.20.0.7:5432/bdjuno?sslmode=disable
+    max_open_connections: 1
+    max_idle_connections: 1
+    partition_size: 100000                                                                                                                                                                                                                                                                                                                                                                                          
+    partition_batch: 1000
+    ssl_mode_enable: "false"
+    ssl_root_cert: ""
+    ssl_cert: ""
+    ssl_key: ""
+logging:
+    level: debug
+    format: text
+    average_block_time: 5s
+pricefeed:
+    tokens:
+        - name: Agoric
+          units:
+            - denom: ubld
+              exponent: 0
+            - denom: bld
+              exponent: 6
+              price_id: agoric
+actions:
+    host: 172.20.0.6
+    port: 3000

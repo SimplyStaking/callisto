@@ -13,7 +13,7 @@ migrations_directory: migrations
 seeds_directory: seeds
 actions:
   kind: synchronous
-  handler_webhook_baseurl: http://localhost:3000
+  handler_webhook_baseurl: http://172.20.0.6:3000
   codegen:
     framework: ""
     output_dir: ""

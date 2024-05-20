@@ -1,0 +1,37 @@
+# Use golang image as builder
+FROM golang:1.20-alpine AS builder
+
+# Install necessary dependencies
+RUN apk update && apk add --no-cache make git
+
+# Set the working directory
+WORKDIR /go/src/github.com/forbole/callisto
+
+# Copy the source code
+COPY . .
+
+# Download dependencies
+RUN go mod download
+
+# Build the application
+RUN make build
+
+# Start a new stage from alpine image
+FROM alpine:latest
+
+# Set the working directory
+WORKDIR /bdjuno
+
+# Copy the built binary from the builder stage
+COPY --from=builder /go/src/github.com/forbole/callisto/build/bdjuno /usr/bin/bdjuno
+
+# Run bdjuno init during the image build process
+RUN bdjuno init
+
+# Copy the config.yaml file
+COPY ./configs /root/.bdjuno
+
+RUN bdjuno parse genesis-file --genesis-file-path /root/.bdjuno/genesis.json
+
+# Set the default command to output the contents of the config.yaml file
+CMD ["bdjuno", "start"]
