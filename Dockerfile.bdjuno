@@ -31,7 +31,5 @@ RUN bdjuno init
 # Copy the config.yaml file
 COPY ./configs /root/.bdjuno
 
-RUN bdjuno parse genesis-file --genesis-file-path /root/.bdjuno/genesis.json
-
 # Set the default command to output the contents of the config.yaml file
 CMD ["bdjuno", "start"]
