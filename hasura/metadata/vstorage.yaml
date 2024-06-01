@@ -1,0 +1,19 @@
+actions:
+  - name: fetchBrandNames
+    definition:
+      kind: synchronous
+      handler: https://main.rpc.agoric.net/abci_query
+      type: query
+      arguments: []
+      output_type: vstorage_data_response
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: Request-Body
+        value: '{"jsonrpc":"2.0","id":1,"method":"abci_query","params":{"path":"/custom/vstorage/data/published.agoricNames.brand"}}'
+  
+custom_types:
+  - name: vstorage_data_response
+    fields:
+      - name: response
+        type: json
