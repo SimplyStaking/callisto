@@ -1,64 +1,75 @@
 version: '3.6'
 services:
-  hasura:
-    container_name: hasura
-    build:
-      context: .
-      dockerfile: Dockerfile.hasura
-    ports:
-      - "8080:8080"
-    restart: always
-    environment:      
-      HASURA_GRAPHQL_DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
-      HASURA_GRAPHQL_DEV_MODE: "true"
-      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
-      ACTION_BASE_URL: ${HASURA_ACTION_BASE_URL}
-    depends_on:
-      - postgres
-    networks:
-      default:
-        ipv4_address: "172.20.0.5"
+    hasura:
+        container_name: hasura
+        build:
+            context: .
+            dockerfile: Dockerfile.hasura
+        ports:
+            - "8080:8080"
+        restart: always
+        environment:
+            HASURA_GRAPHQL_DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+            HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+            HASURA_GRAPHQL_DEV_MODE: "true"
+            HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+            ACTION_BASE_URL: ${HASURA_ACTION_BASE_URL}
+        depends_on:
+            - postgres
+        volumes:
+            - './hasura:/hasura'
+        networks:
+            default:
+              ipv4_address: "172.20.0.5"
 
-  bdjuno:
-    container_name: bdjuno
-    build:
-      context: .
-      dockerfile: Dockerfile.bdjuno
-    restart: always
-    depends_on:
-      - postgres
-      - hasura
-    networks:
-      default:
-        ipv4_address: "172.20.0.6"
-    
+    bdjuno:
+        container_name: bdjuno
+        build:
+            context: .
+            dockerfile: Dockerfile.bdjuno
+        restart: always
+        depends_on:
+            - postgres
+            - hasura
+        networks:
+            default:
+              ipv4_address: "172.20.0.6"
 
-  postgres:
-    container_name: postgres
-    build:
-      context: .
-      dockerfile: Dockerfile.postgres    
-    restart: always
-    environment:
-      # Postgres Credentials
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
-    volumes:
-      # Volume backup for postgres
-       - "./postgres-data:/var/lib/postgresql/data" 
-    networks:
-      default:
-        ipv4_address: "172.20.0.7"
+    postgres:
+        container_name: postgres
+        build:
+            context: .
+            dockerfile: Dockerfile.postgres
+        restart: always
+        environment:
+            # Postgres Credentials
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            POSTGRES_DB: ${POSTGRES_DB}
+        volumes:
+            - './postgres-data:/var/lib/postgresql/data'
+        networks:
+            default:
+                ipv4_address: '172.20.0.7'
+
+    vstorage:
+        container_name: vstorage
+        environment:
+            - PORT=${NODE_PORT}
+        build:
+            context: .
+            dockerfile: Dockerfile.vstorage
+        ports:
+            - '${NODE_PORT}:3000'
+        volumes:
+            - ./vstorage/data:/app/data
+        depends_on:
+            - hasura
 
 networks:
-  default:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-        - subnet: "172.20.0.0/16"
-
-
-
+    default:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: '172.20.0.0/16'

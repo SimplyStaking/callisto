@@ -8,7 +8,7 @@ RUN curl -L https://github.com/hasura/graphql-engine/raw/master/cli/get.sh | bas
 RUN hasura update-cli
 
 # Copy Hasura metadata directory from local to container
-COPY ./hasura/ /hasura/
+#COPY ./hasura/ /hasura/
 
 # Set working directory to the Hasura metadata directory
 WORKDIR /hasura

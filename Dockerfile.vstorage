@@ -1,0 +1,13 @@
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY vstorage/package*.json ./
+
+RUN npm install
+
+COPY vstorage/ ./
+
+RUN mkdir -p /app/data
+
+CMD ["node", "server.js"]
