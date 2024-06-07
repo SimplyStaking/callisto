@@ -72,6 +72,13 @@ type Query {
         limit: Int
         count_total: Boolean
     ): ActionUnbondingDelegationResponse
+
+    action_fetch_vstorage(
+        subPath: String
+        dataMode: Boolean
+        node: String
+        height: Int
+    ): VStorageResponse
 }
 
 type ActionBalance {
@@ -104,6 +111,10 @@ type ActionUnbondingDelegationResponse {
 
 type ActionValidatorCommissionAmount {
     coins: [ActionCoin]
+}
+
+type VStorageResponse {
+  response: String!
 }
 
 scalar ActionCoin
