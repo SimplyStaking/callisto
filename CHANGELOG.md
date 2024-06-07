@@ -1,6 +1,7 @@
 ## Unreleased
+- ([\#Simply-2](https://github.com/SimplyStaking/callisto/pull/2)) Added function on hasura metadata to apply `messages_by_type` automatically
 - ([\#702](https://github.com/forbole/bdjuno/pull/702)) Add `message_type` module and store msg types inside `message_type` table, add `messages_by_type` function to allow to query messages by their types
-- ([\#FETEAM-4](https://github.com/SimplyStaking/callisto/pull/1)) Fixed `docker-composer.yml` to run BDJUNO with AGORIC node rpc and grpc
+- ([\#Simply-1](https://github.com/SimplyStaking/callisto/pull/1)) Fixed `docker-composer.yml` to run BDJUNO with AGORIC node rpc and grpc
 
 ### Changes
 
