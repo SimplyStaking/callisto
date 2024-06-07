@@ -1,0 +1,33 @@
+FROM node:lts-alpine3.20
+
+# Define the working directory in which any RUN, CMD etc commands will be run. If it does not exist it will be created.
+WORKDIR /usr/local/apps/vstorage
+
+# Copy package.json file to the working directory
+COPY ./vstorage/package.json ./
+
+# Install all dependencies
+RUN npm install && npm cache clean --force
+
+# This sets an environment variable PATH to include the binaries from the installed Node.js modules, 
+# making them available for command-line use without specifying their full path.
+ENV PATH=/usr/local/apps/vstorage/node_modules/.bin:$PATH
+
+# This changes the working directory to /usr/local/apps/vstorage/dev
+WORKDIR /usr/local/apps/vstorage/dev
+
+# It copies the tsconfig.json file into the current working directory of the container
+COPY ./vstorage/tsconfig.json ./
+
+# It copies the entire src directory from your host machine into the src directory inside the container
+COPY ./vstorage/src ./src
+
+# It copies the tsconfig.json file into the current working directory of the container
+COPY ./vstorage/.env ./
+
+# This informs Docker that the container will listen on port 8000 at runtime. 
+# It doesn't actually publish the port but serves as documentation and helps with linking containers.
+# EXPOSE ${PORT}
+
+# It runs npm run start:watch
+CMD ["npm", "run", "start:watch"]
